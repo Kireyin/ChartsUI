@@ -7,14 +7,18 @@
 
 import SwiftUI
 
+/**
+Represent a Segment, or Portion, of the PieChart
+- parameter value: The value, or size, of the segment.
+- parameter color: The colour used to fill the segment.
+*/
 public struct PieChartDataPoint: Identifiable, Equatable {
-	public let id: UInt
+	public let id: UUID = UUID()
 	let value: Double
 	let color: Color
 	let label: String? = nil
 	
-	public init(id: UInt, value: Double, color: Color = .red) {
-		self.id = id
+	public init(value: Double, color: Color = .red) {
 		self.value = value
 		self.color = color
 	}
@@ -64,7 +68,7 @@ public struct PieChartView: View {
 	
 	public init(dataSet: PieChartDataSet) {
 		self.dataSet = dataSet
-	}
+	} 
 	
 	public var body: some View {
 		ZStack {
@@ -93,13 +97,13 @@ public struct PieChartView: View {
 
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
-		let dataPoints: [PieChartDataPoint] = [PieChartDataPoint(id: 0, value: 15, color: .blue),
-											   PieChartDataPoint(id: 1, value: 24, color: .red),
-											   PieChartDataPoint(id: 2, value: 34, color: .gray),
-											   PieChartDataPoint(id: 3, value: 42, color: .orange),
-											   PieChartDataPoint(id: 4, value: 51, color: .green),
-											   PieChartDataPoint(id: 5, value: 15, color: .blue),
-											   PieChartDataPoint(id: 6, value: 24, color: .red)]
+		let dataPoints: [PieChartDataPoint] = [PieChartDataPoint(value: 15, color: .blue),
+											   PieChartDataPoint(value: 24, color: .red),
+											   PieChartDataPoint(value: 34, color: .gray),
+											   PieChartDataPoint(value: 42, color: .orange),
+											   PieChartDataPoint(value: 51, color: .green),
+											   PieChartDataPoint(value: 15, color: .blue),
+											   PieChartDataPoint(value: 24, color: .red)]
 		return PieChartView(dataSet: PieChartDataSet(dataPoints: dataPoints))
 			.padding()
     }

@@ -10,13 +10,13 @@ import SwiftUI
 import ChartsUI
 
 struct ContentView: View {
-	let dataPoints: [PieChartDataPoint] = [PieChartDataPoint(id: 0, value: 15, color: .blue),
-										   PieChartDataPoint(id: 1, value: 24, color: .red),
-										   PieChartDataPoint(id: 2, value: 34, color: .gray),
-										   PieChartDataPoint(id: 3, value: 42, color: .orange),
-										   PieChartDataPoint(id: 4, value: 51, color: .green),
-										   PieChartDataPoint(id: 5, value: 15, color: .blue),
-										   PieChartDataPoint(id: 6, value: 24, color: .red)]
+	let dataPoints: [PieChartDataPoint] = [PieChartDataPoint(value: 15, color: .blue),
+										   PieChartDataPoint(value: 24, color: .red),
+										   PieChartDataPoint(value: 34, color: .gray),
+										   PieChartDataPoint(value: 42, color: .orange),
+										   PieChartDataPoint(value: 51, color: .green),
+										   PieChartDataPoint(value: 15, color: .blue),
+										   PieChartDataPoint(value: 24, color: .red)]
 	
     var body: some View {
 		PieChartView(dataSet: PieChartDataSet(dataPoints: dataPoints))
